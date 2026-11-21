@@ -109,6 +109,39 @@ section{padding:55px 6%}
   font-size:14px;
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.gallery-card {
+  background: #11294c;
+  border: 1px solid #294b7b;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card h3 {
+  color: white;
+  padding: 16px;
+  margin: 0;
+  font-size: 17px;
+}
+
 </style>
 </head>
 <body>
@@ -271,6 +304,36 @@ section{padding:55px 6%}
 <div class="card"><h3>NEWS & UPDATES</h3><p>Stay connected with all the latest club announcements.</p></div>
 <div class="card"><h3>TOURNAMENTS</h3><p>Information and registration for upcoming AUFC tournaments.</p></div>
 </div>
+</section>
+
+<section id="gallery" class="about">
+  <h2 class="heading">AUFC GALLERY</h2>
+  <p class="sub">Our journey. Our memories. Our pride.</p>
+
+  <div class="gallery-grid">
+
+    <a class="gallery-card"
+       href="images/IMG_20250628_075204_606.jpg" target="_blank">
+      <img src="images/IMG_20250628_075204_606.jpg"
+           alt="Ariyalur United 2024">
+      <h3>AUFC — 2024</h3>
+    </a>
+
+    <a class="gallery-card"
+       href="images/623807990_18110661346643276_5860102607798465073_n.webp" target="_blank">
+      <img src="images/623807990_18110661346643276_5860102607798465073_n.webp"
+           alt="Ariyalur United team">
+      <h3>Our Team</h3>
+    </a>
+
+    <a class="gallery-card"
+       href="images/IMG_2632.JPG" target="_blank">
+      <img src="images/IMG_2632.JPG"
+           alt="AUFC trophy moment">
+      <h3>Moments of Pride</h3>
+    </a>
+
+  </div>
 </section>
 
 <div class="banner">

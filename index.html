@@ -75,6 +75,40 @@ section{padding:55px 6%}
   font-weight:bold;
 }
 
+
+.match-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
+}
+.match-box{
+  background:linear-gradient(135deg,#142f59,#0a1b35);
+  border:1px solid #31548a;
+  border-radius:9px;
+  padding:28px;
+}
+.match-label{
+  color:#80adff;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-bottom:22px;
+}
+.match-status{
+  display:inline-block;
+  padding:7px 13px;
+  background:#203f70;
+  color:#c7dcff;
+  border-radius:20px;
+  font-size:12px;
+  margin-top:15px;
+}
+.match-empty{
+  color:#a9bbd5;
+  line-height:1.8;
+  font-size:14px;
+}
+
 </style>
 </head>
 <body>
@@ -198,14 +232,36 @@ section{padding:55px 6%}
   </div>
 </section>
 
+
 <section id="matches" class="about">
-<h2 class="heading">MATCH CENTRE</h2>
-<p class="sub">Every match. Every moment. Every memory.</p>
-<div class="cards">
-<div class="card"><h3>UPCOMING FIXTURES</h3><p>Upcoming AUFC matches and tournament schedules will appear here.</p></div>
-<div class="card"><h3>RESULTS</h3><p>Match results and performances will be updated here.</p></div>
-</div>
+  <h2 class="heading">MATCH CENTRE</h2>
+  <p class="sub">Every match. Every moment. Every memory.</p>
+
+  <div class="match-grid">
+
+    <div class="match-box">
+      <div class="match-label">UPCOMING FIXTURES</div>
+      <h3>ARIYALUR UNITED FC</h3>
+      <p class="match-empty">
+        Our next match will be announced soon.
+        Stay connected for fixture updates.
+      </p>
+      <span class="match-status">FIXTURE TO BE ANNOUNCED</span>
+    </div>
+
+    <div class="match-box">
+      <div class="match-label">LATEST RESULTS</div>
+      <h3>OUR MATCH HISTORY</h3>
+      <p class="match-empty">
+        Match results and scorecards will be
+        updated here after every game.
+      </p>
+      <span class="match-status">RESULTS COMING SOON</span>
+    </div>
+
+  </div>
 </section>
+
 
 <section>
 <h2 class="heading">THE AUFC COMMUNITY</h2>

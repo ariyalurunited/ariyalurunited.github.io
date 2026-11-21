@@ -38,6 +38,43 @@ nav div:last-child{display:flex;flex-wrap:wrap}
 .hero{min-height:480px;padding:75px 6%}
 section{padding:55px 6%}
 }
+
+.squad-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:20px;
+}
+.player-card{
+  background:linear-gradient(145deg,#16396f,#0b1b36);
+  border:1px solid #31548a;
+  border-radius:8px;
+  padding:25px 18px;
+  text-align:center;
+  transition:transform .25s,border-color .25s;
+}
+.player-card:hover{
+  transform:translateY(-6px);
+  border-color:#70a5ff;
+}
+.player-number{
+  font-size:48px;
+  font-weight:900;
+  color:#5792ff;
+}
+.player-name{
+  font-size:19px;
+  font-weight:800;
+  margin:8px 0;
+}
+.player-position{
+  display:inline-block;
+  background:#2869dc;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
 </style>
 </head>
 <body>
@@ -85,13 +122,80 @@ section{padding:55px 6%}
 </div>
 </section>
 
+
 <section id="squad">
-<h2 class="heading">THE SQUAD</h2>
-<p class="sub">One team. One ambition.</p>
-<div class="cards">
-<div class="card"><h3>PLAYER PROFILES</h3><p>Our player profiles and squad numbers will be announced here.</p></div>
-<div class="card"><h3>TEAM MANAGEMENT</h3><p>Meet the people working behind the scenes for AUFC.</p></div>
-</div>
+  <h2 class="heading">FIRST TEAM SQUAD</h2>
+  <p class="sub">Meet the players of Ariyalur United FC.</p>
+
+  <div class="squad-grid">
+
+    <div class="player-card">
+      <div class="player-number">10</div>
+      <div class="player-name">BIRLA</div>
+      <span class="player-position">CB</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">28</div>
+      <div class="player-name">HARI</div>
+      <span class="player-position">LWF</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">11</div>
+      <div class="player-name">VICKY</div>
+      <span class="player-position">RWF</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">7</div>
+      <div class="player-name">VASHI</div>
+      <span class="player-position">CMF</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">22</div>
+      <div class="player-name">RAMANA</div>
+      <span class="player-position">LMF</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">1</div>
+      <div class="player-name">MITHUN</div>
+      <span class="player-position">GK</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">8</div>
+      <div class="player-name">SIVA</div>
+      <span class="player-position">LB</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">9</div>
+      <div class="player-name">PT</div>
+      <span class="player-position">LB</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">5</div>
+      <div class="player-name">SIBI</div>
+      <span class="player-position">CB</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">13</div>
+      <div class="player-name">MADHAN</div>
+      <span class="player-position">RB</span>
+    </div>
+
+    <div class="player-card">
+      <div class="player-number">17</div>
+      <div class="player-name">AKASH</div>
+      <span class="player-position">AMF</span>
+    </div>
+
+  </div>
 </section>
 
 <section id="matches" class="about">

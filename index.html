@@ -8,175 +8,181 @@
 <meta name="description" content="Official website of Ariyalur United Football Club. One Club. One Community. One United Spirit.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#050a15;--navy:#091326;--navy-2:#10213f;--blue:#1f5cff;--blue-bright:#69a1ff;--gold:#d8b66a;--white:#fff;--mist:#c7d3e8;--line:rgba(153,184,240,.18)}
 html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#07152d;color:white}
-nav{height:75px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#061126;border-bottom:1px solid #26395b}
-.logo img{   height:60px;   width:auto;   display:block;   object-fit:contain; }
-.logo span{color:#4b8cff}
-nav a{color:white;text-decoration:none;margin-left:22px;font-size:13px}
-.hero{min-height:570px;padding:100px 8%;display:flex;align-items:center;background:linear-gradient(90deg,#061126 5%,#07152dd9 55%,#07152d55),url('IMG_2701.JPG') center/cover}
-.hero small{color:#80adff;letter-spacing:4px;font-weight:bold}
-.hero h1{font-size:clamp(42px,7vw,78px);line-height:1.05;margin:22px 0}
-.hero h1 span{color:#4b8cff}
-.hero p{font-size:16px;color:#c7d4eb;line-height:1.8}
-.btn{display:inline-block;margin-top:30px;padding:15px 25px;background:#2869dc;color:white;text-decoration:none;font-weight:bold;border-radius:3px}
-section{padding:75px 8%}
-.heading{font-size:32px;margin-bottom:15px}
-.sub{color:#9aafd0;margin-bottom:35px}
+body{font-family:Arial,sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 82% 12%,rgba(31,92,255,.12),transparent 22%),linear-gradient(135deg,#050a15 0%,#091326 70%,#07101f 100%)}
+nav{height:78px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:rgba(5,10,21,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+.logo{height:66px;width:66px;border:1px solid var(--line);border-radius:50%;padding:4px;display:flex;align-items:center;justify-content:center;background:#080f20}
+.logo img{height:56px;width:56px;display:block;object-fit:contain}
+nav a{color:var(--mist);text-decoration:none;margin-left:24px;font-size:12px;font-weight:800;letter-spacing:1.4px;position:relative}
+nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;background:var(--blue-bright);transition:.25s}
+nav a:hover{color:white}
+nav a:hover::after{right:0}
+.admin-open-button{margin-left:20px;padding:10px 14px;border:1px solid var(--blue-bright);background:var(--blue);color:white;font-size:11px;font-weight:900;letter-spacing:1px;cursor:pointer}
+.admin-open-button:hover{background:#286cff}
+.hero{min-height:590px;padding:90px 8%;display:flex;align-items:center;justify-content:space-between;gap:50px;position:relative;overflow:hidden;background:#091326}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,10,21,.98) 5%,rgba(9,19,38,.86) 52%,rgba(9,19,38,.32)),url('IMG_2701.JPG') center/cover;animation:hero-slideshow 18s infinite}
+.hero::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-70px;height:140px;background:var(--ink);transform:rotate(-2deg);z-index:1}
+@keyframes hero-slideshow{0%,28%{background-image:linear-gradient(90deg,rgba(5,10,21,.98) 5%,rgba(9,19,38,.86) 52%,rgba(9,19,38,.32)),url('IMG_2701.JPG')}33%,61%{background-image:linear-gradient(90deg,rgba(5,10,21,.98) 5%,rgba(9,19,38,.86) 52%,rgba(9,19,38,.32)),url('IMG_2632.JPG')}66%,94%{background-image:linear-gradient(90deg,rgba(5,10,21,.98) 5%,rgba(9,19,38,.86) 52%,rgba(9,19,38,.32)),url('images/IMG_20240928_142240.jpg')}100%{background-image:linear-gradient(90deg,rgba(5,10,21,.98) 5%,rgba(9,19,38,.86) 52%,rgba(9,19,38,.32)),url('IMG_2701.JPG')}}
+.hero-content{max-width:680px;position:relative;z-index:2}
+.hero small{color:var(--blue-bright);letter-spacing:5px;font-weight:800;text-transform:uppercase}
+.hero h1{font-size:clamp(46px,7vw,86px);line-height:.92;margin:22px 0 26px;letter-spacing:-3px;text-transform:uppercase;text-shadow:0 10px 35px rgba(0,0,0,.35)}
+.hero h1 span{color:var(--blue-bright);-webkit-text-stroke:1px var(--blue-bright)}
+.hero p{font-size:16px;color:#e1e8f5;line-height:1.8}
+.hero p.motto{color:var(--blue-bright);font-weight:800;letter-spacing:.5px}
+.hero-crest{position:relative;z-index:2;width:min(300px,28vw);aspect-ratio:1;border:1px solid rgba(105,161,255,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,rgba(31,92,255,.22),rgba(5,10,21,.18) 58%,transparent 60%)}
+.hero-crest img{width:82%;filter:drop-shadow(0 18px 28px rgba(0,0,0,.55))}
+.btn{display:inline-block;margin-top:30px;padding:16px 24px;background:var(--blue);color:white;text-decoration:none;font-weight:900;font-size:13px;letter-spacing:.7px;border:1px solid var(--blue-bright);box-shadow:8px 8px 0 rgba(105,161,255,.12);transition:.25s}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:12px 12px 0 rgba(105,161,255,.15);background:#286cff}
+section{padding:85px 8%;position:relative}
+.heading{font-size:clamp(28px,4vw,42px);margin-bottom:12px;text-transform:uppercase;letter-spacing:-1px}
+.heading::after{content:"";display:block;width:68px;height:4px;margin-top:16px;background:var(--blue-bright)}
+.sub{color:#9fb1d1;margin-bottom:38px;line-height:1.7}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#10264a;padding:28px;border:1px solid #263e65;border-radius:5px}
-.card h3{margin-bottom:12px;color:#80adff}
-.card p{color:#c4d0e4;line-height:1.7;font-size:14px}
-.about{background:#0c2040}
-.banner{text-align:center;background:#102d60;padding:65px 20px}
-.banner h2{font-size:32px;margin-bottom:15px}
-footer{text-align:center;background:#050e1e;padding:35px 15px;color:#9aafd0;font-size:13px;line-height:2}
+.card{background:linear-gradient(145deg,rgba(18,42,78,.95),rgba(8,20,41,.96));padding:30px;border:1px solid var(--line);border-left:3px solid var(--blue-bright);border-radius:3px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:rgba(105,161,255,.55);box-shadow:0 18px 40px rgba(0,0,0,.2)}
+.card h3{margin-bottom:14px;color:var(--blue-bright);letter-spacing:1px}
+.card p{color:#d1dcec;line-height:1.75;font-size:14px}
+.about{background:linear-gradient(135deg,#0d1c36,#071022)}
+.club-stats{padding:0 8%;margin-top:-1px;position:relative;z-index:3}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#0b1830;border:1px solid var(--line)}
+.stat{padding:26px 20px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font-size:32px;color:var(--blue-bright)}
+.stat span{display:block;margin-top:6px;color:#9fb1d1;font-size:11px;font-weight:800;letter-spacing:1.5px}
+.banner{text-align:center;background:linear-gradient(110deg,#091326,#153a74,#091326);padding:68px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.banner::before,.banner::after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(105,161,255,.16);transform:rotate(45deg)}
+.banner::before{left:-110px;top:-100px}.banner::after{right:-110px;bottom:-100px}
+.banner h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px;letter-spacing:2px}
+.banner p{color:var(--blue-bright);font-weight:900;letter-spacing:5px}
+footer{text-align:center;background:#040811;padding:45px 15px;color:#9aafd0;font-size:13px;line-height:2;border-top:1px solid var(--line)}
+.squad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px}
+.player-card{background:linear-gradient(145deg,#122e59,#091424);border:1px solid var(--line);border-radius:3px;padding:25px 18px;text-align:center;position:relative;overflow:hidden;transition:.25s}
+.player-card::before{content:"";position:absolute;width:80px;height:80px;border:2px solid rgba(105,161,255,.08);border-radius:50%;top:-35px;right:-35px}
+.player-card:hover{transform:translateY(-7px);border-color:var(--blue-bright);box-shadow:0 18px 35px rgba(0,0,0,.25)}
+.player-number{font-size:48px;font-weight:900;color:var(--blue-bright);text-shadow:4px 4px 0 rgba(31,92,255,.15)}
+.player-name{font-size:18px;font-weight:900;margin:8px 0;letter-spacing:.5px}
+.player-position{display:inline-block;background:var(--blue);padding:6px 14px;border-radius:20px;font-size:11px;font-weight:900}
+.match-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.match-box{background:linear-gradient(135deg,#142d54,#081426);border:1px solid var(--line);border-radius:3px;padding:30px;position:relative}
+.match-box::after{content:"";position:absolute;right:18px;top:18px;width:35px;height:35px;border-top:2px solid var(--blue-bright);border-right:2px solid var(--blue-bright)}
+.match-label{color:var(--blue-bright);font-size:12px;font-weight:900;letter-spacing:2px;margin-bottom:22px}
+.match-status{display:inline-block;padding:8px 13px;background:rgba(31,92,255,.18);color:#d5e5ff;border:1px solid rgba(105,161,255,.25);border-radius:20px;font-size:11px;font-weight:900;margin-top:18px}
+.match-empty{color:#b8c7df;line-height:1.8;font-size:14px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:30px}
+.gallery-card{background:#0d1d38;border:1px solid var(--line);border-radius:3px;overflow:hidden;text-decoration:none;transition:.3s}
+.gallery-card:hover{transform:translateY(-7px);border-color:var(--blue-bright)}
+.gallery-card img{width:100%;height:260px;object-fit:cover;display:block;filter:saturate(.9) contrast(1.05)}
+.gallery-card h3{color:white;padding:16px;margin:0;font-size:16px;text-transform:uppercase;letter-spacing:.4px}
+.footer-contact{text-align:center;padding:35px 20px}
+.footer-contact h2{color:white;margin-bottom:12px}.footer-contact p{color:#b8c9e8}
+.social-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:25px 0}
+.social-links a{color:white;text-decoration:none;font-weight:900;padding:10px 16px;border:1px solid var(--line);transition:.25s}
+.social-links a:hover{background:var(--blue);border-color:var(--blue-bright)}
+.club-email{font-size:14px}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.js .reveal.is-visible{opacity:1;transform:none}
+.section-kicker{display:inline-block;color:var(--blue-bright);font-size:11px;font-weight:900;letter-spacing:2px;margin-bottom:12px}
+.filter-row{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 25px}
+.filter-button,.utility-button{cursor:pointer;background:#0a1730;border:1px solid var(--line);color:#d8e4f7;padding:10px 15px;font:inherit;font-size:12px;font-weight:800;letter-spacing:.5px}
+.filter-button[aria-pressed="true"],.filter-button:hover,.utility-button:hover{background:var(--blue);border-color:var(--blue-bright);color:white}
+.filter-empty{grid-column:1/-1;color:#9fb1d1;padding:20px;border:1px dashed var(--line);font-size:13px}
+.player-card[hidden],.gallery-card[hidden]{display:none}
+.player-card{display:flex;flex-direction:column;align-items:center}
+.player-details{width:100%;margin-top:16px;padding-top:13px;border-top:1px solid var(--line);color:#b8c7df;font-size:12px;line-height:1.7}
+.player-details summary{cursor:pointer;color:var(--blue-bright);font-weight:800}
+.player-details p{margin-top:8px}
+.form-note{font-size:12px;line-height:1.7;color:#9fb1d1;margin-top:14px}
+.fixture-note{padding:23px;border:1px dashed rgba(105,161,255,.45);color:#bdcce2;background:rgba(10,23,48,.65);line-height:1.8}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.timeline-item{padding:24px;border-top:2px solid var(--blue-bright);background:#0b1830}
+.timeline-item:last-child{border-color:var(--gold)}
+.timeline-item:last-child time{color:var(--gold)}
+.timeline-item time{color:var(--blue-bright);font-size:14px;font-weight:900}
+.timeline-item h3{margin:10px 0;color:white}
+.timeline-item p{font-size:13px;line-height:1.7;color:#b8c7df}
+.gallery-card{cursor:zoom-in}
+.gallery-card img{aspect-ratio:4/3;height:auto;object-fit:cover}
+.lightbox{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:35px;background:rgba(2,6,14,.95)}
+.lightbox.is-open{display:flex}
+.lightbox img{max-width:min(100%,1100px);max-height:80vh;object-fit:contain}
+.lightbox-caption{position:absolute;bottom:22px;left:70px;right:70px;text-align:center;color:#e3eaf7}
+.lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;border:1px solid var(--line);background:#0a1730;color:white;padding:10px 14px;font-size:22px;cursor:pointer}
+.lightbox-close{top:18px;right:18px}.lightbox-prev{left:18px}.lightbox-next{right:18px}
+.formation-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:28px;align-items:start}
+.formation-board{min-width:0;padding:18px;background:#0b422f;border:1px solid rgba(176,224,193,.3)}
+.formation-board svg{display:block;width:100%;height:auto;max-height:760px}
+.formation-board .pitch-lines{fill:none;stroke:rgba(255,255,255,.72);stroke-width:3}
+.formation-board .pitch-mark{fill:none;stroke:rgba(255,255,255,.72);stroke-width:3}
+.formation-player circle{fill:#1f5cff;stroke:white;stroke-width:4}
+.formation-player .jersey{fill:white;font-size:25px;font-weight:900;text-anchor:middle;dominant-baseline:central}
+.formation-player .name{fill:white;font-size:18px;font-weight:800;text-anchor:middle}
+.formation-tools,.admin-box{padding:24px;background:#0b1830;border:1px solid var(--line)}
+.formation-tools h3,.admin-box h3{margin-bottom:14px;color:var(--blue-bright)}
+.formation-tools select,.admin-formation-editor select,.admin-login-form input,.admin-player-row input,.admin-add-player input{width:100%;padding:11px;background:#081326;color:white;border:1px solid var(--line);font:inherit}
+.formation-slots{display:grid;gap:10px;margin:18px 0}
+.formation-slot{display:grid;grid-template-columns:85px 1fr;gap:10px;align-items:center;color:#c7d3e8;font-size:12px;font-weight:800}
+.formation-status,.admin-status{min-height:1.5em;color:#aabbd4;font-size:12px;line-height:1.6;margin-top:12px}
+.formation-public-status{padding:18px;border:1px dashed var(--line);color:#b8c7df;line-height:1.7}
+.admin-modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(2,6,14,.88)}
+.admin-modal[hidden]{display:none}
+.formation-preview-modal{z-index:70}
+.admin-dialog{width:min(980px,100%);max-height:92vh;overflow:auto;position:relative;padding:28px;background:#091326;border:1px solid var(--line);box-shadow:0 25px 80px rgba(0,0,0,.6)}
+.formation-preview-dialog{width:min(850px,100%)}
+.formation-preview-board{width:min(100%,520px);margin:18px auto 0;padding:12px}
+.admin-close{position:absolute;top:15px;right:15px;background:transparent;border:0;color:white;font-size:26px;cursor:pointer}
+.admin-login-form{display:grid;gap:14px;max-width:460px;margin-top:20px}
+.admin-login-form label,.admin-add-player label{display:grid;gap:6px;color:#c7d3e8;font-size:12px;font-weight:800}
+.admin-dashboard[hidden],.admin-login-form[hidden]{display:none}
+.admin-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:20px 0}
+.admin-table-wrap{overflow:auto}
+.admin-player-table{width:100%;border-collapse:collapse;min-width:760px}
+.admin-player-table th,.admin-player-table td{padding:8px;border-bottom:1px solid var(--line);text-align:left}
+.admin-player-table th{color:var(--blue-bright);font-size:11px}
+.admin-player-table input{min-width:85px;padding:9px;background:#081326;color:white;border:1px solid var(--line);font:inherit}
+.admin-player-table input[name="full_name"],.admin-player-table input[name="positions"]{min-width:150px}
+.admin-remove{border:1px solid #8e3b4e;background:#461d2b;color:white;padding:8px;cursor:pointer}
+.admin-add-player{display:grid;grid-template-columns:2fr 1.4fr .7fr .8fr 1.4fr auto;gap:10px;align-items:end;margin-top:20px}
+.admin-formation-editor{margin-top:30px;padding:25px 0 0;border-top:1px solid var(--line)}
+.utility-button:disabled{opacity:.5;cursor:not-allowed}
+.admin-formation-editor .formation-slot{margin:9px 0}
+.icon-button{border:1px solid var(--line);background:#0a1730;color:white;padding:10px 14px;cursor:pointer}
+.icon-button:hover{border-color:var(--blue-bright)}
+.contact-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(240px,.7fr);gap:26px;align-items:start}
+.contact-form{display:grid;gap:14px}
+.contact-form label{display:grid;gap:7px;color:#c7d3e8;font-size:13px;font-weight:700}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:12px;background:#081326;color:white;border:1px solid var(--line);font:inherit}
+.contact-form textarea{min-height:120px;resize:vertical}
+.contact-form .btn{cursor:pointer}
+.community-options{display:grid;gap:12px}
+.community-options a{display:block;padding:18px;background:#0c1c37;border:1px solid var(--line);color:#e0e9f8;text-decoration:none}
+.community-options a:hover{border-color:var(--blue-bright)}
+.back-to-top{position:fixed;right:20px;bottom:20px;z-index:30;width:44px;height:44px;border:1px solid var(--blue-bright);background:var(--blue);color:white;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.back-to-top.is-visible{opacity:1;pointer-events:auto}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:20px 0}
+.footer-links a{color:#9fb1d1}
+@media(max-width:900px){.formation-layout{grid-template-columns:1fr}.admin-add-player{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.js .reveal{opacity:1;transform:none}}
 @media(max-width:650px){
-nav{padding:0 5%;height:auto;min-height:70px;flex-wrap:wrap;gap:12px}
-nav a{margin:0 8px 12px 0;font-size:11px}
-nav div:last-child{display:flex;flex-wrap:wrap}
-.hero{min-height:480px;padding:75px 6%}
-section{padding:55px 6%}
-}
-
-.squad-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-  gap:20px;
-}
-.player-card{
-  background:linear-gradient(145deg,#16396f,#0b1b36);
-  border:1px solid #31548a;
-  border-radius:8px;
-  padding:25px 18px;
-  text-align:center;
-  transition:transform .25s,border-color .25s;
-}
-.player-card:hover{
-  transform:translateY(-6px);
-  border-color:#70a5ff;
-}
-.player-number{
-  font-size:48px;
-  font-weight:900;
-  color:#5792ff;
-}
-.player-name{
-  font-size:19px;
-  font-weight:800;
-  margin:8px 0;
-}
-.player-position{
-  display:inline-block;
-  background:#2869dc;
-  padding:6px 14px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:bold;
-}
-
-
-.match-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:22px;
-}
-.match-box{
-  background:linear-gradient(135deg,#142f59,#0a1b35);
-  border:1px solid #31548a;
-  border-radius:9px;
-  padding:28px;
-}
-.match-label{
-  color:#80adff;
-  font-size:13px;
-  font-weight:bold;
-  letter-spacing:2px;
-  margin-bottom:22px;
-}
-.match-status{
-  display:inline-block;
-  padding:7px 13px;
-  background:#203f70;
-  color:#c7dcff;
-  border-radius:20px;
-  font-size:12px;
-  margin-top:15px;
-}
-.match-empty{
-  color:#a9bbd5;
-  line-height:1.8;
-  font-size:14px;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
-  margin-top: 30px;
-}
-
-.gallery-card {
-  background: #11294c;
-  border: 1px solid #294b7b;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform .3s ease;
-}
-
-.gallery-card:hover {
-  transform: translateY(-6px);
-}
-
-.gallery-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery-card h3 {
-  color: white;
-  padding: 16px;
-  margin: 0;
-  font-size: 17px;
-}
-
-.footer-contact {
-    text-align: center;
-    padding: 35px 20px;
-}
-
-.footer-contact h2 {
-    color: #ffffff;
-    margin-bottom: 12px;
-}
-
-.footer-contact p {
-    color: #b8c9e8;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin: 25px 0;
-}
-
-.social-links a {
-    color: #6da2ff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    color: #ffffff;
-}
-
-.club-email {
-    font-size: 14px;
+nav{height:auto;min-height:72px;padding:10px 5%;align-items:center}
+.logo{height:54px;width:54px}.logo img{height:44px;width:44px}
+nav div:last-child{display:flex;justify-content:flex-end;gap:12px;flex-wrap:wrap;max-width:210px}
+nav a{margin:0;font-size:10px}
+.admin-open-button{margin:0;padding:8px 10px;font-size:9px}
+.hero{min-height:520px;padding:70px 6%;display:block}
+.hero h1{font-size:48px;letter-spacing:-2px}
+.hero-crest{display:none}
+section{padding:60px 6%}
+.club-stats{padding:0 6%}
+.stats-grid{grid-template-columns:repeat(2,1fr)}
+.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.gallery-card img{height:220px}
+.contact-layout{grid-template-columns:1fr}
+.admin-dialog{padding:24px 16px}
+.admin-add-player{grid-template-columns:1fr}
+.formation-slot{grid-template-columns:70px 1fr}
+.lightbox{padding:18px}.lightbox-caption{left:50px;right:50px}
 }
 
 </style>
@@ -192,20 +198,35 @@ section{padding:55px 6%}
 <a href="#home">HOME</a>
 <a href="#about">ABOUT</a>
 <a href="#squad">SQUAD</a>
+<a href="#formation">FORMATION</a>
 <a href="#matches">MATCHES</a>
+<a href="#gallery">GALLERY</a>
 <a href="#contact">CONTACT</a>
+<button class="admin-open-button" id="admin-open" type="button">ADMIN LOGIN</button>
 </div>
 </nav>
 
 <header class="hero" id="home">
-<div>
+<div class="hero-content">
 <small>ARIYALUR • TAMIL NADU</small>
 <h1>ARIYALUR<br><span>UNITED FC</span></h1>
-<p>One Club. One Community. One United Spirit - SINCE 2021.</p>
+<p class="motto">One Club. One Community. One United Spirit - SINCE 2021.</p>
 <p>More than a football club. A community united by passion.</p>
 <a class="btn" href="#about">DISCOVER OUR CLUB →</a>
 </div>
+<div class="hero-crest" aria-hidden="true">
+<img src="aufc-logo.png" alt="">
+</div>
 </header>
+
+<div class="club-stats">
+  <div class="stats-grid">
+    <div class="stat"><strong>2021</strong><span>FOUNDED</span></div>
+    <div class="stat"><strong>11</strong><span>FIRST TEAM</span></div>
+    <div class="stat"><strong>3</strong><span>ARCHIVED EVENT YEARS</span></div>
+    <div class="stat"><strong>ARIYALUR</strong><span>HOME TOWN</span></div>
+  </div>
+</div>
 
 <section id="about" class="about">
 <h2 class="heading">MORE THAN A CLUB.</h2>
@@ -228,82 +249,81 @@ section{padding:55px 6%}
 
 
 <section id="squad">
-  <h2 class="heading">FIRST TEAM SQUAD</h2>
-  <p class="sub">Meet the players of Ariyalur United FC.</p>
+  <span class="section-kicker">THE PLAYERS</span>
+  <h2 class="heading">AUFC PLAYER SQUAD</h2>
+  <p class="sub">Player names, jersey details, and positions from the AUFC player list.</p>
+  <div class="filter-row" role="group" aria-label="Filter squad by position">
+    <button class="filter-button squad-filter" type="button" data-filter="all" aria-pressed="true">ALL PLAYERS</button>
+    <button class="filter-button squad-filter" type="button" data-filter="goalkeeper" aria-pressed="false">GOALKEEPER</button>
+    <button class="filter-button squad-filter" type="button" data-filter="defender" aria-pressed="false">DEFENDERS</button>
+    <button class="filter-button squad-filter" type="button" data-filter="midfielder" aria-pressed="false">MIDFIELDERS</button>
+    <button class="filter-button squad-filter" type="button" data-filter="forward" aria-pressed="false">FORWARDS</button>
+  </div>
 
   <div class="squad-grid">
+    <article class="player-card" data-role="defender midfielder" data-full-name="R T BIRLA" data-jersey-name="BILLU"><div class="player-number">10</div><h3 class="player-name">BILLU</h3><span class="player-position">CB, DMF</span></article>
+    <article class="player-card" data-role="forward midfielder" data-full-name="E HARI KARAN" data-jersey-name="Hari"><div class="player-number">28</div><h3 class="player-name">HARI</h3><span class="player-position">LWF, LMF, RWF</span></article>
+    <article class="player-card" data-role="forward" data-full-name="V VIGNESHWARAN" data-jersey-name="Vicky"><div class="player-number">7</div><h3 class="player-name">VICKY</h3><span class="player-position">RWF</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="M S VASHISTAR" data-jersey-name="vashi"><div class="player-number">11</div><h3 class="player-name">VASHI</h3><span class="player-position">CMF</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="S RAMANA" data-jersey-name="RAMANA"><div class="player-number">22</div><h3 class="player-name">RAMANA</h3><span class="player-position">LMF</span></article>
+    <article class="player-card" data-role="goalkeeper" data-full-name="S MITHUN" data-jersey-name="MITHUN"><div class="player-number">19</div><h3 class="player-name">MITHUN</h3><span class="player-position">GK</span></article>
+    <article class="player-card" data-role="forward midfielder" data-full-name="THIRUMAVALAVAN" data-jersey-name="THIRU"><div class="player-number">30</div><h3 class="player-name">THIRU</h3><span class="player-position">LWF, LWM</span></article>
+    <article class="player-card" data-role="defender midfielder forward" data-full-name="R SIBISARANATHAN" data-jersey-name="SIBI"><div class="player-number">5</div><h3 class="player-name">SIBI</h3><span class="player-position">CB, LB, RB, CDM, SS</span></article>
+    <article class="player-card" data-role="forward midfielder" data-full-name="R.S. ASHWATH" data-jersey-name="ASH"><div class="player-number">21</div><h3 class="player-name">ASH</h3><span class="player-position">LWF, LMF</span></article>
+    <article class="player-card" data-role="forward midfielder" data-full-name="S. AKASH" data-jersey-name="AKASH"><div class="player-number">12</div><h3 class="player-name">AKASH</h3><span class="player-position">RWF, AMF</span></article>
+    <article class="player-card" data-role="defender midfielder" data-full-name="P. SIVAKUMAR" data-jersey-name="Sivii"><div class="player-number">23</div><h3 class="player-name">SIVII</h3><span class="player-position">RB, RMF</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="K. BHARATH KUMAR" data-jersey-name="BHARATH"><div class="player-number">6</div><h3 class="player-name">BHARATH</h3><span class="player-position">CMF</span></article>
+    <article class="player-card" data-role="defender midfielder" data-full-name="P.T. YOGESHWARAN" data-jersey-name="YOGESH"><div class="player-number">8</div><h3 class="player-name">YOGESH</h3><span class="player-position">LB, LMF</span></article>
+    <article class="player-card" data-role="forward" data-full-name="S.S. KAVIBHARATHI" data-jersey-name="Kavi"><div class="player-number">20</div><h3 class="player-name">KAVI</h3><span class="player-position">CF</span></article>
+    <article class="player-card" data-role="defender" data-full-name="P. MADHAN KUMAR" data-jersey-name="MADHAN"><div class="player-number">66</div><h3 class="player-name">MADHAN</h3><span class="player-position">CB, RB</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="U. BHAVAGANESAR" data-jersey-name="BHAVA"><div class="player-number">4</div><h3 class="player-name">BHAVA</h3><span class="player-position">CMF, DMF</span></article>
+    <article class="player-card" data-role="goalkeeper" data-full-name="V. RISHINTHAN" data-jersey-name="AJII"><div class="player-number">29</div><h3 class="player-name">AJII</h3><span class="player-position">GK</span></article>
+    <article class="player-card" data-role="defender" data-full-name="S. AADHITHYA VARMAN" data-jersey-name="Aadhi S"><div class="player-number">25</div><h3 class="player-name">AADHI S</h3><span class="player-position">CB</span></article>
+    <article class="player-card" data-role="goalkeeper defender" data-full-name="M. MUHILAN" data-jersey-name="Muhi"><div class="player-number">1</div><h3 class="player-name">MUHI</h3><span class="player-position">GK, CB</span></article>
+    <article class="player-card" data-role="forward" data-full-name="K. YUTHISH DHARAN" data-jersey-name="DHARAN"><div class="player-number">15</div><h3 class="player-name">DHARAN</h3><span class="player-position">LWF, CF, RWF</span></article>
+    <article class="player-card" data-role="goalkeeper" data-full-name="S. ELANCHEZHIYAN" data-jersey-name="Ela"><div class="player-number">2</div><h3 class="player-name">ELA</h3><span class="player-position">GK</span></article>
+    <article class="player-card" data-role="forward" data-full-name="S. GURU PRASATH" data-jersey-name="Guru"><div class="player-number">9</div><h3 class="player-name">GURU</h3><span class="player-position">LWF</span></article>
+    <article class="player-card" data-role="defender" data-full-name="A.B. SANJAY" data-jersey-name="SANJAY"><div class="player-number">13</div><h3 class="player-name">SANJAY</h3><span class="player-position">CB, LB</span></article>
+    <article class="player-card" data-role="defender" data-full-name="G. NATARAJAN" data-jersey-name="NATARAJAN"><div class="player-number">18</div><h3 class="player-name">NATARAJAN</h3><span class="player-position">CB</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="R. UDAI KRISHNA" data-jersey-name="UDAI"><div class="player-number">33</div><h3 class="player-name">UDAI</h3><span class="player-position">RMF, LMF</span></article>
+    <article class="player-card" data-role="forward" data-full-name="K. DHANUSH" data-jersey-name="Dhanush"><div class="player-number">77</div><h3 class="player-name">DHANUSH</h3><span class="player-position">LW, RW</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="J. MOHAMAD AFSAL" data-jersey-name="AFSAL"><div class="player-number">16</div><h3 class="player-name">AFSAL</h3><span class="player-position">RMF</span></article>
+    <article class="player-card" data-role="midfielder forward" data-full-name="R.S. NITHISH" data-jersey-name="Nithish"><div class="player-number">14</div><h3 class="player-name">NITHISH</h3><span class="player-position">CM, LW, RW</span></article>
+    <article class="player-card" data-role="midfielder forward" data-full-name="K. SRINIVASAN" data-jersey-name="Srini"><div class="player-number">3</div><h3 class="player-name">SRINI</h3><span class="player-position">CM, RW, CF</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="ARUMUGAVELAN" data-jersey-name="VELA"><div class="player-number">55</div><h3 class="player-name">VELA</h3><span class="player-position">CM, DMF</span></article>
+    <article class="player-card" data-role="forward midfielder" data-full-name="J. YUHUN" data-jersey-name="Yuhun"><div class="player-number">41</div><h3 class="player-name">YUHUN</h3><span class="player-position">LWF, CF, CMF</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="P. DANIEL SAMSON" data-jersey-name="Samson"><div class="player-number">27</div><h3 class="player-name">SAMSON</h3><span class="player-position">AMF, LM</span></article>
+    <article class="player-card" data-role="forward" data-full-name="K. KAVIYARASU" data-jersey-name="Kavi"><div class="player-number">53</div><h3 class="player-name">KAVI</h3><span class="player-position">CF, RWF</span></article>
+    <article class="player-card" data-role="defender" data-full-name="Pravin" data-jersey-name="Pravin"><div class="player-number">88</div><h3 class="player-name">PRAVIN</h3><span class="player-position">CB</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="Luya Pravin" data-jersey-name="Luya"><div class="player-number">47</div><h3 class="player-name">LUYA</h3><span class="player-position">DMF</span></article>
+    <article class="player-card" data-role="midfielder" data-full-name="KEERTHI VARMAN" data-jersey-name="Keerthi"><div class="player-number">26</div><h3 class="player-name">KEERTHI</h3><span class="player-position">CM</span></article>
+    <article class="player-card" data-role="midfielder forward" data-full-name="Harinath.M" data-jersey-name="HARI"><div class="player-number">44</div><h3 class="player-name">HARI</h3><span class="player-position">CMF, RWF</span></article>
+  </div>
 
-    <div class="player-card">
-      <div class="player-number">10</div>
-      <div class="player-name">BIRLA</div>
-      <span class="player-position">CB</span>
+  <p class="form-note">Jersey name and positions are shown from the supplied AUFC list. Player photos and statistics are not included in that document.</p>
+
+</section>
+
+<section id="formation" class="about">
+  <span class="section-kicker">TACTICS BOARD</span>
+  <h2 class="heading">MAIN 11 FORMATION</h2>
+  <p class="sub">An illustrative 4-3-3 is shown until you save your own lineup. Build a starting 11, save squad edits, and download the formation image. This demo does not share changes with other devices.</p>
+  <div class="formation-layout">
+    <div class="formation-board" id="public-formation" aria-label="Published football lineup">
+      <p class="formation-public-status">No main 11 formation has been published yet.</p>
     </div>
-
-    <div class="player-card">
-      <div class="player-number">28</div>
-      <div class="player-name">HARI</div>
-      <span class="player-position">LWF</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">11</div>
-      <div class="player-name">VICKY</div>
-      <span class="player-position">RWF</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">7</div>
-      <div class="player-name">VASHI</div>
-      <span class="player-position">CMF</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">22</div>
-      <div class="player-name">RAMANA</div>
-      <span class="player-position">LMF</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">1</div>
-      <div class="player-name">MITHUN</div>
-      <span class="player-position">GK</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">8</div>
-      <div class="player-name">SIVA</div>
-      <span class="player-position">LB</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">9</div>
-      <div class="player-name">PT</div>
-      <span class="player-position">LB</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">5</div>
-      <div class="player-name">SIBI</div>
-      <span class="player-position">CB</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">13</div>
-      <div class="player-name">MADHAN</div>
-      <span class="player-position">RB</span>
-    </div>
-
-    <div class="player-card">
-      <div class="player-number">17</div>
-      <div class="player-name">AKASH</div>
-      <span class="player-position">AMF</span>
-    </div>
-
+    <aside class="formation-tools">
+      <h3>CLUB LINEUP</h3>
+      <p class="match-empty">Demo changes are saved in this browser only. They are not shared with other visitors, browsers, or devices.</p>
+      <button class="utility-button" id="download-formation" type="button" disabled>PREVIEW & DOWNLOAD PNG</button>
+      <p class="formation-status" id="formation-status" aria-live="polite">Sign in to the demo admin panel to publish a starting 11.</p>
+    </aside>
   </div>
 </section>
 
 
 <section id="matches" class="about">
+  <span class="section-kicker">FIXTURES & RESULTS</span>
   <h2 class="heading">MATCH CENTRE</h2>
   <p class="sub">Every match. Every moment. Every memory.</p>
 
@@ -312,90 +332,162 @@ section{padding:55px 6%}
     <div class="match-box">
       <div class="match-label">UPCOMING FIXTURES</div>
       <h3>ARIYALUR UNITED FC</h3>
-      <p class="match-empty">
-        Our next match will be announced soon.
-        Stay connected for fixture updates.
-      </p>
-      <span class="match-status">FIXTURE TO BE ANNOUNCED</span>
+      <p class="match-empty">No confirmed upcoming fixture has been published yet. Check the club's social pages for announcements.</p>
+      <a class="match-status" href="https://www.instagram.com/ariyalur_united/" target="_blank" rel="noopener noreferrer">FOLLOW FIXTURE UPDATES</a>
     </div>
 
     <div class="match-box">
-      <div class="match-label">LATEST RESULTS</div>
-      <h3>OUR MATCH HISTORY</h3>
-      <p class="match-empty">
-        Match results and scorecards will be
-        updated here after every game.
-      </p>
-      <span class="match-status">RESULTS COMING SOON</span>
+      <div class="match-label">LIVE SCORES & RESULTS</div>
+      <h3>OFFICIAL SCORE UPDATES</h3>
+      <p class="match-empty">Live scores and verified scorecards are not available yet. We will publish results here when official match data is provided.</p>
+      <span class="match-status">NO VERIFIED LIVE DATA</span>
     </div>
 
   </div>
+  <p class="form-note">Fixtures, venues, scorecards, league tables and match reminders will appear here once club-confirmed information is available.</p>
+  <button class="utility-button" type="button" data-share="Ariyalur United FC match updates">SHARE MATCH UPDATES</button>
 </section>
 
 
-<section>
-<h2 class="heading">THE AUFC COMMUNITY</h2>
-<p class="sub">Our journey continues, on and off the pitch.</p>
-<div class="cards">
-<div class="card"><h3>GALLERY</h3><p>Training sessions, matches, celebrations and unforgettable memories.</p></div>
-<div class="card"><h3>NEWS & UPDATES</h3><p>Stay connected with all the latest club announcements.</p></div>
-<div class="card"><h3>TOURNAMENTS</h3><p>Information and registration for upcoming AUFC tournaments.</p></div>
-</div>
+<section id="history">
+  <span class="section-kicker">OUR JOURNEY</span>
+  <h2 class="heading">CLUB HISTORY & HONOURS</h2>
+  <p class="sub">A growing club story, told through the dates and moments shared by AUFC.</p>
+  <div class="timeline">
+    <article class="timeline-item"><time datetime="2021">2021</time><h3>ARIYALUR UNITED FC BEGINS</h3><p>The club's official website identifies 2021 as its founding year.</p></article>
+    <article class="timeline-item"><time datetime="2023">2023</time><h3>DON BOSCO TOURNAMENT</h3><p>Team photo and tournament memory from the club gallery.</p></article>
+    <article class="timeline-item"><time datetime="2024">2024</time><h3>JFC STATE LEVEL 7s</h3><p>Gallery archive entry for the JFC State Level 7s Tournament.</p></article>
+    <article class="timeline-item"><time datetime="2025">2025</time><h3>PILIMISAI UNITED 5s</h3><p>Gallery archive entry for the Pilimisai United 5s Tournament.</p></article>
+  </div>
+  <p class="form-note">Competition placements and trophies are not listed without verified results.</p>
+  <p class="form-note">Club leadership, coaching and founder profiles will be added when AUFC confirms names and approved photos.</p>
 </section>
 
-<section id="gallery" class="about">
+<section id="gallery">
+  <span class="section-kicker">MATCHES · TRAINING · TEAM</span>
   <h2 class="heading">AUFC GALLERY</h2>
-  <p class="sub">Our journey. Our memories. Our pride.</p>
+  <p class="sub">Our journey. Our memories. Our pride. Select a photo to view it full size.</p>
+  <div class="filter-row" role="group" aria-label="Filter gallery">
+    <button class="filter-button gallery-filter" type="button" data-filter="all" aria-pressed="true">ALL PHOTOS</button>
+    <button class="filter-button gallery-filter" type="button" data-filter="tournament" aria-pressed="false">TOURNAMENTS</button>
+    <button class="filter-button gallery-filter" type="button" data-filter="team" aria-pressed="false">TEAM</button>
+    <button class="filter-button gallery-filter" type="button" data-filter="training" aria-pressed="false">TRAINING</button>
+    <button class="filter-button gallery-filter" type="button" data-filter="celebration" aria-pressed="false">CELEBRATIONS</button>
+    <button class="filter-button gallery-filter" type="button" data-filter="2023" aria-pressed="false">2023</button>
+    <button class="filter-button gallery-filter" type="button" data-filter="2024" aria-pressed="false">2024</button>
+    <button class="filter-button gallery-filter" type="button" data-filter="2025" aria-pressed="false">2025</button>
+  </div>
 
   <div class="gallery-grid">
 
-    <a class="gallery-card"
-       href="images/IMG_20250628_075204_606.jpg" target="_blank">
-      <img src="images/IMG_20250628_075204_606.jpg"
-           alt="Ariyalur United 2024">
+    <a class="gallery-card" data-category="tournament" data-year="2024" href="images/IMG_20250628_075204_606.jpg" data-caption="JFC State Level 7s Tournament">
+      <img src="images/IMG_20250628_075204_606.jpg" alt="Ariyalur United at the JFC State Level 7s Tournament" loading="lazy">
       <h3>JFC State Level 7s Tournament</h3>
     </a>
 
-    <a class="gallery-card"
-       href="images/623807990_18110661346643276_5860102607798465073_n.webp" target="_blank">
-      <img src="images/623807990_18110661346643276_5860102607798465073_n.webp"
-           alt="Ariyalur United team">
+    <a class="gallery-card" data-category="tournament" data-year="2023" href="images/623807990_18110661346643276_5860102607798465073_n.webp" data-caption="Don Bosco Tournament 2023">
+      <img src="images/623807990_18110661346643276_5860102607798465073_n.webp" alt="Ariyalur United team at Don Bosco Tournament 2023" loading="lazy">
       <h3>Don Bosco Tournament 2023</h3>
     </a>
 
-    <a class="gallery-card"
-       href="images/20250531_182441.jpg" target="_blank">
-      <img src="20250531_182441.jpg"
-           alt="AUFC trophy moment">
+    <a class="gallery-card" data-category="tournament celebration" data-year="2025" href="images/20250531_182441.jpg" data-caption="Pilimisai United 5s Tournament 2025">
+      <img src="images/20250531_182441.jpg" alt="AUFC trophy moment at Pilimisai United 5s Tournament 2025" loading="lazy">
       <h3>Pilimisai United 5s Tournament 2025</h3>
     </a>
-    
+
+    <a class="gallery-card" data-category="team" href="IMG_2632.JPG" data-caption="Ariyalur United team huddle">
+      <img src="IMG_2632.JPG" alt="Ariyalur United players gathered for a team huddle" loading="lazy">
+      <h3>Team Huddle</h3>
+    </a>
+
+    <a class="gallery-card" data-category="team" href="IMG_2701.JPG" data-caption="AUFC team moment on the pitch">
+      <img src="IMG_2701.JPG" alt="Ariyalur United players on the pitch" loading="lazy">
+      <h3>On the Pitch</h3>
+    </a>
+
+    <a class="gallery-card" data-category="team celebration" data-year="2024" href="images/IMG_20240928_142240.jpg" data-caption="AUFC players with their medals">
+      <img src="images/IMG_20240928_142240.jpg" alt="Ariyalur United players celebrating with medals" loading="lazy">
+      <h3>Team Celebrations</h3>
+    </a>
+
+    <a class="gallery-card" data-category="team" data-year="2025" href="IMG_20250114_200444268.jpg" data-caption="Ariyalur United player portrait">
+      <img src="IMG_20250114_200444268.jpg" alt="Ariyalur United player in club kit" loading="lazy">
+      <h3>Player Portrait</h3>
+    </a>
+  </div>
+</section>
+
+<section id="community" class="about">
+  <span class="section-kicker">GET INVOLVED</span>
+  <h2 class="heading">JOIN THE AUFC COMMUNITY</h2>
+  <p class="sub">Support the club, ask about joining, or get in touch about local partnerships.</p>
+  <div class="cards">
+    <article class="card"><h3>PLAYER & SUPPORTER REGISTRATION</h3><p>Interested in joining AUFC? Send the club a registration enquiry by email.</p><a class="match-status" href="mailto:ariyalurunited@gmail.com?subject=AUFC%20Registration%20Enquiry">REGISTER YOUR INTEREST</a></article>
+    <article class="card"><h3>VOLUNTEER & COMMUNITY EVENTS</h3><p>Contact the club to ask about volunteering, match-day support, or upcoming community activities.</p><a class="match-status" href="mailto:ariyalurunited@gmail.com?subject=AUFC%20Volunteer%20Enquiry">VOLUNTEER ENQUIRY</a></article>
+    <article class="card"><h3>SPONSORSHIP & PARTNERSHIPS</h3><p>Local businesses and community partners can contact the club to discuss supporting AUFC.</p><a class="match-status" href="mailto:ariyalurunited@gmail.com?subject=AUFC%20Partnership%20Enquiry">PARTNER WITH AUFC</a></article>
+  </div>
+  <div class="cards" style="margin-top:20px">
+    <article class="card"><h3>FOLLOW THE CLUB</h3><p>Find match announcements and club updates through AUFC's official social channels.</p><a class="match-status" href="https://www.instagram.com/ariyalur_united/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></article>
+    <article class="card"><h3>WATCH AUFC</h3><p>Visit the official YouTube channel for available club videos and highlights.</p><a class="match-status" href="https://www.youtube.com/@Ariyalur_United" target="_blank" rel="noopener noreferrer">YOUTUBE CHANNEL</a></article>
+  </div>
+</section>
+
+<section id="contact">
+  <span class="section-kicker">SAY HELLO</span>
+  <h2 class="heading">CONTACT AUFC</h2>
+  <p class="sub">Complete the form to open an email draft to the club. Nothing is submitted or stored by this website.</p>
+  <div class="contact-layout">
+    <form class="contact-form" id="contact-form">
+      <label for="contact-name">Your name<input id="contact-name" name="name" autocomplete="name" required></label>
+      <label for="contact-email">Your email<input id="contact-email" name="email" type="email" autocomplete="email" required></label>
+      <label for="contact-topic">What is this about?
+        <select id="contact-topic" name="topic" required>
+          <option value="">Choose a topic</option>
+          <option>Player registration</option><option>Supporter enquiry</option><option>Volunteer enquiry</option>
+          <option>Sponsorship or partnership</option><option>Merchandise enquiry</option><option>General question</option>
+        </select>
+      </label>
+      <label for="contact-message">Message<textarea id="contact-message" name="message" required></textarea></label>
+      <button class="btn" type="submit">OPEN EMAIL DRAFT</button>
+      <p class="form-note" id="contact-status" aria-live="polite">Your email app will open with the message details filled in; you choose whether to send it.</p>
+    </form>
+    <aside class="community-options">
+      <a href="mailto:ariyalurunited@gmail.com"><strong>EMAIL</strong><br>ariyalurunited@gmail.com</a>
+      <a href="https://www.instagram.com/ariyalur_united/" target="_blank" rel="noopener noreferrer"><strong>INSTAGRAM</strong><br>@ariyalur_united</a>
+      <a href="https://www.youtube.com/@Ariyalur_United" target="_blank" rel="noopener noreferrer"><strong>YOUTUBE</strong><br>Ariyalur United</a>
+    </aside>
   </div>
 </section>
 
 <div class="banner">
+<img src="aufc-logo.png" alt="Ariyalur United FC crest" width="100" height="100" style="object-fit:contain;margin-bottom:12px">
 <h2>ONE CLUB. ONE COMMUNITY.</h2>
 <p>ONE UNITED SPIRIT.</p>
 </div>
 
-<footer id="contact">
+<footer>
 <h2>ARIYALUR UNITED FC</h2>
 <p>One Club. One Community. One United Spirit.</p>
 <p>Ariyalur, Tamil Nadu, India</p>
 <p>© 2026 Ariyalur United Football Club. All Rights Reserved.</p>
+<div class="footer-links">
+  <a href="privacy.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+  <a href="gallery-credits.html">Gallery credits</a>
+</div>
 <div class="footer-contact">
     <h2>CONTACT & FOLLOW US</h2>
     <p>Stay connected with Ariyalur United FC.</p>
 
     <div class="social-links">
         <a href="https://www.instagram.com/ariyalur_united/"
-           target="_blank">Instagram</a>
+           target="_blank" rel="noopener noreferrer">Instagram</a>
 
         <a href="mailto:ariyalurunited@gmail.com">
            Email</a>
 
         <a href="https://www.youtube.com/@Ariyalur_United"
-           target="_blank">YouTube</a>
+           target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
 
     <p class="club-email">
@@ -404,5 +496,220 @@ section{padding:55px 6%}
 </div>
 </footer>
 
+<div class="admin-modal" id="admin-modal" hidden>
+  <div class="admin-dialog" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+    <button class="admin-close" id="admin-close" type="button" aria-label="Close admin panel">&times;</button>
+    <span class="section-kicker">AUFC MANAGEMENT</span>
+    <h2 class="heading" id="admin-title">ADMIN LOGIN</h2>
+    <p class="form-note" id="admin-setup-note" aria-live="polite"><strong>DEMO ONLY:</strong> This client-side login is not secure. Demo email: <code>admin@aufc.local</code> · Password: <code>tharamudiyadhu</code>. Squad and formation changes stay in this browser.</p>
+    <form class="admin-login-form" id="admin-login-form">
+      <label for="admin-email">Admin email<input id="admin-email" name="email" type="email" autocomplete="username" required></label>
+      <label for="admin-password">Password<input id="admin-password" name="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn" type="submit">SIGN IN</button>
+    </form>
+    <div class="admin-dashboard" id="admin-dashboard" hidden>
+      <p class="admin-status" id="admin-status" aria-live="polite"></p>
+      <div class="admin-actions">
+        <button class="utility-button" id="add-player" type="button">ADD PLAYER</button>
+        <button class="utility-button" id="save-squad" type="button">SAVE SQUAD</button>
+        <button class="utility-button" id="admin-logout" type="button">SIGN OUT</button>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-player-table">
+          <thead><tr><th>Full name</th><th>Jersey name</th><th>Number</th><th>Positions (comma-separated)</th><th>Action</th></tr></thead>
+          <tbody id="admin-player-rows"></tbody>
+        </table>
+      </div>
+      <section class="admin-formation-editor">
+        <h3>MAIN 11 FORMATION</h3>
+        <label for="formation-choice">Formation shape</label>
+        <select id="formation-choice">
+          <option value="4-3-3">4-3-3</option>
+          <option value="4-4-2">4-4-2</option>
+          <option value="3-5-2">3-5-2</option>
+        </select>
+        <div class="formation-slots" id="formation-slots"></div>
+        <div class="admin-actions">
+          <button class="utility-button" id="save-formation" type="button">SAVE MAIN 11</button>
+          <button class="utility-button" id="preview-current-formation" type="button">PREVIEW CURRENT SELECTION</button>
+          <button class="utility-button" id="admin-download-formation" type="button" disabled>PREVIEW SAVED LINEUP</button>
+        </div>
+        <p class="admin-status" id="formation-admin-status" aria-live="polite"></p>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="admin-modal formation-preview-modal" id="formation-preview-modal" hidden>
+  <div class="admin-dialog formation-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="formation-preview-title">
+    <button class="admin-close" id="formation-preview-close" type="button" aria-label="Close formation preview">&times;</button>
+    <span class="section-kicker">AUFC TACTICS BOARD</span>
+    <h2 class="heading" id="formation-preview-title">FORMATION PREVIEW</h2>
+    <p class="form-note" id="formation-preview-note" aria-live="polite">Review player positions, names, and jersey numbers before downloading.</p>
+    <div class="formation-board formation-preview-board" id="formation-preview-board" aria-label="Formation image preview"></div>
+    <div class="admin-actions">
+      <button class="utility-button" id="formation-preview-download" type="button">DOWNLOAD THIS PNG</button>
+      <button class="utility-button" id="formation-preview-done" type="button">CLOSE PREVIEW</button>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Close photo viewer">&times;</button>
+  <button class="lightbox-prev" type="button" aria-label="Previous photo">&#8249;</button>
+  <img alt="">
+  <button class="lightbox-next" type="button" aria-label="Next photo">&#8250;</button>
+  <p class="lightbox-caption" aria-live="polite"></p>
+</div>
+<button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">&#8593;</button>
+
+<script>
+document.documentElement.classList.add("js");
+
+var revealItems = document.querySelectorAll("section, .club-stats, .banner, .card, .match-box, .timeline-item, .gallery-card");
+if ("IntersectionObserver" in window) {
+  var revealObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach(function(item) {
+    item.classList.add("reveal");
+    revealObserver.observe(item);
+  });
+} else {
+  revealItems.forEach(function(item) { item.classList.add("is-visible"); });
+}
+
+function installFilter(buttonSelector, itemSelector) {
+  var buttons = document.querySelectorAll(buttonSelector);
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      var selected = button.dataset.filter;
+      buttons.forEach(function(item) {
+        item.setAttribute("aria-pressed", String(item === button));
+      });
+      var items = document.querySelectorAll(itemSelector);
+      var visibleCount = 0;
+      items.forEach(function(item) {
+        var tags = (item.dataset.category || "").split(/\s+/);
+        if (item.dataset.role) tags = tags.concat(item.dataset.role.split(/\s+/));
+        if (item.dataset.year) tags.push(item.dataset.year);
+        item.hidden = selected !== "all" && tags.indexOf(selected) === -1;
+        if (!item.hidden) visibleCount++;
+      });
+      var grid = button.closest(".filter-row").nextElementSibling;
+      var emptyMessage = grid.nextElementSibling;
+      if (!emptyMessage || !emptyMessage.classList.contains("filter-empty")) {
+        emptyMessage = document.createElement("p");
+        emptyMessage.className = "filter-empty";
+        emptyMessage.textContent = "There are no published items in this category yet.";
+        grid.parentNode.insertBefore(emptyMessage, grid.nextSibling);
+      }
+      emptyMessage.hidden = selected === "all" || visibleCount > 0;
+    });
+  });
+}
+
+installFilter(".squad-filter", ".player-card");
+installFilter(".gallery-filter", ".gallery-card");
+
+document.querySelectorAll(".player-card").forEach(function(player) {
+  var profile = document.createElement("details");
+  profile.className = "player-details";
+  var summary = document.createElement("summary");
+  summary.textContent = "VIEW PLAYER PROFILE";
+  var description = document.createElement("p");
+  description.textContent = "Full name: " + player.dataset.fullName +
+    " · Jersey name: " + player.dataset.jerseyName +
+    " · Jersey number: " + player.querySelector(".player-number").textContent +
+    " · Positions: " + player.querySelector(".player-position").textContent;
+  profile.appendChild(summary);
+  profile.appendChild(description);
+  player.appendChild(profile);
+});
+
+var galleryCards = Array.prototype.slice.call(document.querySelectorAll(".gallery-card"));
+var lightbox = document.getElementById("gallery-lightbox");
+var lightboxImage = lightbox.querySelector("img");
+var lightboxCaption = lightbox.querySelector(".lightbox-caption");
+var activePhoto = 0;
+var previousFocus = null;
+function showPhoto(index) {
+  activePhoto = (index + galleryCards.length) % galleryCards.length;
+  var card = galleryCards[activePhoto];
+  var thumbnail = card.querySelector("img");
+  lightboxImage.src = card.href;
+  lightboxImage.alt = thumbnail.alt;
+  lightboxCaption.textContent = card.dataset.caption;
+}
+function closeLightbox() {
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  if (previousFocus) previousFocus.focus();
+}
+galleryCards.forEach(function(card, index) {
+  card.addEventListener("click", function(event) {
+    event.preventDefault();
+    previousFocus = card;
+    showPhoto(index);
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    lightbox.querySelector(".lightbox-close").focus();
+  });
+});
+lightbox.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+lightbox.querySelector(".lightbox-prev").addEventListener("click", function() { showPhoto(activePhoto - 1); });
+lightbox.querySelector(".lightbox-next").addEventListener("click", function() { showPhoto(activePhoto + 1); });
+lightbox.addEventListener("click", function(event) {
+  if (event.target === lightbox) closeLightbox();
+});
+document.addEventListener("keydown", function(event) {
+  if (!lightbox.classList.contains("is-open")) return;
+  if (event.key === "Escape") closeLightbox();
+  if (event.key === "ArrowLeft") showPhoto(activePhoto - 1);
+  if (event.key === "ArrowRight") showPhoto(activePhoto + 1);
+});
+
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var form = event.currentTarget;
+  var fields = new FormData(form);
+  var subject = "AUFC enquiry: " + fields.get("topic");
+  var body = "Name: " + fields.get("name") + "\nEmail: " + fields.get("email") + "\n\n" + fields.get("message");
+  document.getElementById("contact-status").textContent = "Opening your email application. Review the draft there and send it if you wish.";
+  window.location.href = "mailto:ariyalurunited@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+});
+
+document.querySelectorAll("[data-share]").forEach(function(button) {
+  button.addEventListener("click", function() {
+    var title = button.dataset.share;
+    var shareUrl = new URL(window.location.href);
+    shareUrl.hash = "matches";
+    var shareData = { title: title, text: title + " — Ariyalur United FC", url: shareUrl.href };
+    if (navigator.share) {
+      navigator.share(shareData).catch(function(error) {
+        if (error.name !== "AbortError") button.textContent = "SHARING UNAVAILABLE";
+      });
+    } else {
+      window.open("https://wa.me/?text=" + encodeURIComponent(shareData.text + " " + shareData.url), "_blank", "noopener,noreferrer");
+    }
+  });
+});
+
+var backToTop = document.getElementById("back-to-top");
+window.addEventListener("scroll", function() {
+  backToTop.classList.toggle("is-visible", window.scrollY > 500);
+}, { passive: true });
+backToTop.addEventListener("click", function() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+<script src="formation-admin.js"></script>
 </body>
 </html>

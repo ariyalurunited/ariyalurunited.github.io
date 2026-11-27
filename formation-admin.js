@@ -11,6 +11,8 @@
   var dashboard = document.getElementById("admin-dashboard");
   var adminStatus = document.getElementById("admin-status");
   var formationAdminStatus = document.getElementById("formation-admin-status");
+  var formationSection = document.getElementById("formation");
+  var formationNavLink = document.getElementById("formation-nav-link");
   var publicFormation = document.getElementById("public-formation");
   var previewBoard = document.getElementById("formation-preview-board");
   var previewNote = document.getElementById("formation-preview-note");
@@ -60,7 +62,9 @@
         full_name: card.dataset.fullName || "",
         jersey_name: card.dataset.jerseyName || "",
         jersey_number: number,
-        positions: card.querySelector(".player-position").textContent || ""
+        positions: card.querySelector(".player-position").textContent || "",
+        image: card.dataset.playerImage || "",
+        description: card.dataset.playerDescription || ""
       };
     });
   }
@@ -70,7 +74,9 @@
       typeof player.full_name === "string" &&
       typeof player.jersey_name === "string" &&
       Number.isInteger(Number(player.jersey_number)) &&
-      typeof player.positions === "string";
+      typeof player.positions === "string" &&
+      (player.image === undefined || typeof player.image === "string") &&
+      (player.description === undefined || typeof player.description === "string");
   }
 
   function restoreDemoState() {
@@ -112,7 +118,21 @@
   function renderRoster(list) {
     var grid = document.querySelector(".squad-grid");
     if (!grid) return;
-    players = sortPlayers(list);
+    var existingProfiles = new Map();
+    grid.querySelectorAll(".player-card").forEach(function (card) {
+      var number = card.querySelector(".player-number").textContent.trim();
+      existingProfiles.set(number, {
+        image: card.dataset.playerImage || "",
+        description: card.dataset.playerDescription || ""
+      });
+    });
+    players = sortPlayers(list).map(function (player) {
+      var existingProfile = existingProfiles.get(String(player.jersey_number)) || {};
+      return Object.assign({}, player, {
+        image: player.image || existingProfile.image,
+        description: player.description || existingProfile.description
+      });
+    });
     grid.replaceChildren();
     players.forEach(function (player) {
       var card = document.createElement("article");
@@ -120,6 +140,8 @@
       card.dataset.role = rolesForPositions(player.positions);
       card.dataset.fullName = player.full_name;
       card.dataset.jerseyName = player.jersey_name;
+      if (player.image) card.dataset.playerImage = player.image;
+      if (player.description) card.dataset.playerDescription = player.description;
 
       var number = document.createElement("div");
       number.className = "player-number";
@@ -130,17 +152,8 @@
       var position = document.createElement("span");
       position.className = "player-position";
       position.textContent = player.positions;
-      var details = document.createElement("details");
-      details.className = "player-details";
-      var summary = document.createElement("summary");
-      summary.textContent = "VIEW PLAYER PROFILE";
-      var description = document.createElement("p");
-      description.textContent = "Full name: " + player.full_name +
-        " · Jersey name: " + player.jersey_name +
-        " · Jersey number: " + player.jersey_number +
-        " · Positions: " + player.positions;
-      details.append(summary, description);
-      card.append(number, name, position, details);
+      card.append(number, name, position);
+      window.setupPlayerCard(card);
       grid.appendChild(card);
     });
   }
@@ -256,6 +269,12 @@
     target.appendChild(message);
   }
 
+  function setFormationVisibility(isVisible) {
+    formationSection.hidden = !isVisible;
+    formationNavLink.hidden = !isVisible;
+    if (isVisible) formationSection.classList.add("is-visible");
+  }
+
   function setDownloadAvailability(isAvailable) {
     publicDownload.disabled = !(publishedLineup && publicFormation.querySelector("svg"));
     adminDownload.disabled = !isAvailable;
@@ -334,6 +353,8 @@
     list.forEach(function (player) {
       var row = document.createElement("tr");
       row.dataset.playerId = player.id;
+      row.dataset.playerImage = player.image || "";
+      row.dataset.playerDescription = player.description || "";
       [
         ["full_name", player.full_name],
         ["jersey_name", player.jersey_name],
@@ -363,6 +384,7 @@
 
   function showDashboard() {
     isAdmin = true;
+    setFormationVisibility(true);
     loginForm.hidden = true;
     dashboard.hidden = false;
     setupNote.textContent = "DEMO MODE: This client-side login is not secure. Your edits are stored in this browser only.";
@@ -388,7 +410,9 @@
         full_name: values.full_name,
         jersey_name: values.jersey_name,
         jersey_number: values.jersey_number === "" ? NaN : Number(values.jersey_number),
-        positions: values.positions
+        positions: values.positions,
+        image: row.dataset.playerImage || "",
+        description: row.dataset.playerDescription || ""
       };
     });
   }
@@ -607,6 +631,7 @@
   document.getElementById("save-formation").addEventListener("click", saveLineup);
   document.getElementById("admin-logout").addEventListener("click", function () {
     isAdmin = false;
+    setFormationVisibility(false);
     loginForm.reset();
     loginForm.hidden = false;
     dashboard.hidden = true;
